@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Serlin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      max-width: 500px;
+      animation: fadeIn 2s ease;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+    .yes {
+      background-color: #00c853;
+      color: white;
+    }
+    .no {
+      background-color: #d50000;
+      color: white;
+      position: relative;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hai Serlin</h1>
+    <p>
+      Aku nggak pandai merangkai kata yang berlebihan,
+
+      tapi aku selalu merasa nyaman setiap ngobrol sama kamu.
+
+      Dari hal kecil sampai hal sederhana, semuanya terasa berbeda.
+    </p>
+    <p>
+      Aku nggak mau terburu-buru, dan aku juga nggak mau memaksakan.
+
+      Aku cuma ingin jujur sama apa yang aku rasakan sekarang.
+    </p>
+    <h2>Jadi... mau nggak kamu jalan bareng aku, lebih dari sekadar teman?</h2>
+
+    <button class="yes" onclick="jawab()">Mau</button>
+    <button class="no" onmouseover="hindar(this)">Nggak</button>
+  </div>
+
+  <script>
+    function jawab() {
+      document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;">
+          <div>
+            <h1>Terima kasih, Serlin 😊</h1>
+            <p>Aku bakal jaga perasaan ini dan berusaha jadi yang terbaik buat kamu.</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function hindar(btn) {
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.position = 'absolute';
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
